@@ -1,5 +1,6 @@
-export class Customer{
+import {UserManagement} from "../interfaces/UserManagement"
 
+export class Customer implements UserManagement{
     private name: string;
     private email: string;
     private phone: string;
@@ -19,5 +20,22 @@ export class Customer{
     public getPhone():string{
         return this.phone
     }
+
+    public  subscribeToNewProductAvaliability():void{
+        console.log("Subscrubing to new product availability ...")
+    }
+
+    public  subscribeToSMSNotification():void{
+        console.log("Subscrubing to SMS Notification ...")
+    }
+
+    public  updateUserProfile(customer:Customer):void{
+        console.log("Updating user profile + " + customer.getName() + "...")
+    }
+
+    public changePassword(customer:Customer,  newPassword:string) {
+    console.log("Updating user: " + customer.getName() + ".....");
+
+  }
 
 }
